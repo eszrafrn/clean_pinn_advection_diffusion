@@ -6,6 +6,11 @@ import numpy as np
 import torch
 from tqdm import trange
 
+import sys
+root = Path(__file__).resolve().parent.parent
+src = root/"src"
+sys.path.insert(0, str(src))
+
 from advection_diffusion.initial_conditions import gaussian_pulse_np
 from advection_diffusion.metrics import compute_mass
 from advection_diffusion.pinn_losses import gaussian_quadrature, total_pinn_loss
