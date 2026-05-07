@@ -4,6 +4,11 @@ from pathlib import Path
 import numpy as np
 import torch
 
+import sys
+root = Path(__file__).resolve().parent.parent
+src = root/"src"
+sys.path.insert(0, str(src))
+
 from advection_diffusion.pinn_model import load_checkpoint
 from advection_diffusion.plotting import animate_cn_vs_pinn
 
