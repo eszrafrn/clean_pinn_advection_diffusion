@@ -32,7 +32,7 @@ def parse_args():
     parser.add_argument("--D", type=float, default=0.01)
     parser.add_argument("--sigma", type=float, default=0.1)
     parser.add_argument("--x0", type=float, default=0.5)
-    parser.add_argument("--layers", default="2,64,64,64,64,1")
+    parser.add_argument("--layers", default="2,50,50,50,50,1")
     parser.add_argument("--n-r", type=int, default=10000)
     parser.add_argument("--n-ic", type=int, default=2000)
     parser.add_argument("--n-bc", type=int, default=2000)
@@ -92,20 +92,32 @@ def main():
     if args.variant == "conservative":
         x_quad, w_quad = gaussian_quadrature(args.n_quad, L=args.L, device=device)
         t_samples = torch.linspace(0.0, args.T, args.n_time_mass, device=device).reshape(-1, 1)
-        c0_quad = gaussian_pulse_np(
+
+        c0_quad_np = gaussian_pulse_np(
             x_quad.detach().cpu().numpy().reshape(-1),
             amplitude=1.0,
             x0=args.x0,
             sigma=args.sigma,
         )
-        M0 = compute_mass(c0_quad, L=args.L, grid_type="cell")
-        mass_data = {
-            "x_quad": x_quad,
-            "w_quad": w_quad,
-            "t_samples": t_samples,
-            "M0": M0,
-        }
-        params["M0"] = M0
+
+        c0_quad = torch.tensor(
+            c0_quad_np,
+            dtype=torch.float32,
+            device=device
+        ).reshape(-1, 1)
+
+        M0 = torch.sum(c0_quad * w_quad).item()
+
+    print(f"M0 target for mass penalty = {M0:.12e}")
+
+    mass_data = {
+        "x_quad": x_quad,
+        "w_quad": w_quad,
+        "t_samples": t_samples,
+        "M0": M0,
+    }
+
+    params["M0"] = M0
 
     optimizer = torch.optim.Adam(model.parameters(), lr=args.lr)
     history = []
