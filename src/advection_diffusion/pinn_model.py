@@ -6,7 +6,7 @@ class PINN(nn.Module):
     def __init__(self, layers=None, L=1.0, T=1.0):
         super().__init__()
         if layers is None:
-            layers = [2, 64, 64, 64, 64, 1]
+            layers = [2, 50, 50, 50, 50, 50, 1]
         self.layers = list(layers)
         self.register_buffer("lower", torch.tensor([[0.0, 0.0]], dtype=torch.float32))
         self.register_buffer("upper", torch.tensor([[float(L), float(T)]], dtype=torch.float32))
