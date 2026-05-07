@@ -1,18 +1,24 @@
 import argparse
 import json
+import numpy as np
 from pathlib import Path
 
-import numpy as np
+import sys
+root = Path(__file__).resolve().parent.parent
+src = root/"src"
+sys.path.insert(0, str(src))
+
 
 from advection_diffusion.cn_solver import CNConfig, CrankNicolson1D
+
 
 
 def parse_args():
     parser = argparse.ArgumentParser()
     parser.add_argument("--bc", choices=["dirichlet", "periodic", "zero_flux"], default="periodic")
-    parser.add_argument("--pe", type=float, default=1.0)
+    parser.add_argument("--pe", type=float, default=20.0)
     parser.add_argument("--L", type=float, default=1.0)
-    parser.add_argument("--T", type=float, default=10.0)
+    parser.add_argument("--T", type=float, default=5.0)
     parser.add_argument("--D", type=float, default=0.01)
     parser.add_argument("--nx", type=int, default=1000)
     parser.add_argument("--nt", type=int, default=1000)
