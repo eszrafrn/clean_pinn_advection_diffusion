@@ -1,0 +1,5 @@
+*.pyc
+__pycache__/
+*.npz
+*.log
+.ipynb_checkpoints/
