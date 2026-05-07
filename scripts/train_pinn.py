@@ -33,7 +33,7 @@ def parse_args():
     parser.add_argument("--sigma", type=float, default=0.1)
     parser.add_argument("--x0", type=float, default=0.5)
     parser.add_argument("--layers", default="2,50,50,50,50,50,1")
-    parser.add_argument("--n-r", type=int, default=10000)
+    parser.add_argument("--n-r", type=int, default=20000)
     parser.add_argument("--n-ic", type=int, default=2000)
     parser.add_argument("--n-bc", type=int, default=2000)
     parser.add_argument("--epochs-adam", type=int, default=10000)
