@@ -110,14 +110,14 @@ def main():
 
         print(f"M0 target for mass penalty = {M0:.12e}")
 
-    mass_data = {
-        "x_quad": x_quad,
-        "w_quad": w_quad,
-        "t_samples": t_samples,
-        "M0": M0,
-    }
+        mass_data = {
+            "x_quad": x_quad,
+            "w_quad": w_quad,
+            "t_samples": t_samples,
+            "M0": M0,
+        }
 
-    params["M0"] = M0
+        params["M0"] = M0
 
     optimizer = torch.optim.Adam(model.parameters(), lr=args.lr)
     history = []
