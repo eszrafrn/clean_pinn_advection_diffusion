@@ -44,7 +44,7 @@ def load_checkpoint(path, map_location="cpu"):
     payload = torch.load(path, map_location=map_location)
     cfg = payload.get("config", {})
     model = PINN(
-        layers=payload.get("layers", [2, 64, 64, 64, 64, 1]),
+        layers=payload.get("layers", [2, 50, 50, 50, 50, 50, 1]),
         L=cfg.get("L", 1.0),
         T=cfg.get("T", 1.0),
     )
