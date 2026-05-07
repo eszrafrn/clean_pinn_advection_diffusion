@@ -108,7 +108,7 @@ def main():
 
         M0 = torch.sum(c0_quad * w_quad).item()
 
-    print(f"M0 target for mass penalty = {M0:.12e}")
+        print(f"M0 target for mass penalty = {M0:.12e}")
 
     mass_data = {
         "x_quad": x_quad,
