@@ -1,0 +1,14 @@
+{
+  "reference": "outputs/reference/reference_periodic_Pe5_T5.npz",
+  "vanilla": "outputs/models/pinn_vanilla_periodic_Pe5_T5.pt",
+  "conservative": "outputs/models/pinn_conservative_periodic_Pe5_T5.pt",
+  "pe": 5.0,
+  "thresholds": {
+    "mass_tol": 0.01,
+    "tv_ratio_tol": 1.05,
+    "negative_tol_rel": 0.001,
+    "overshoot_tol_rel": 0.001,
+    "l2_tol": null
+  },
+  "grid_type": "auto"
+}

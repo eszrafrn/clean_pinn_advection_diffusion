@@ -1,0 +1,16 @@
+{
+  "model": "outputs/models/pinn_vanilla_dirichlet_Pe0.5_T5.pt",
+  "reference": "outputs/reference/reference_dirichlet_Pe0.5_T5.npz",
+  "bc_type": "dirichlet",
+  "M0": 0.250662679995813,
+  "final_l2": 0.007253327945864762,
+  "max_l2": 0.00779063237057256,
+  "final_linf": 0.0031433960089517765,
+  "final_conservation_error_cn": 0.2644869359492028,
+  "final_conservation_error_pinn": 0.26104821471678497,
+  "max_conservation_error_pinn": 0.26104821471678497,
+  "final_reference_mass_error": 0.003438721232417801,
+  "min_c_pinn": -0.0015559233725070953,
+  "first_negative_time_threshold": 4.87,
+  "max_tv_ratio_pinn_to_initial": 1.0
+}

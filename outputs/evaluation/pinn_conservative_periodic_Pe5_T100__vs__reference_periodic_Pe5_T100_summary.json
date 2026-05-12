@@ -1,0 +1,16 @@
+{
+  "model": "outputs/models/pinn_conservative_periodic_Pe5_T100.pt",
+  "reference": "outputs/reference/reference_periodic_Pe5_T100.npz",
+  "bc_type": "periodic",
+  "M0": 0.2506626837262588,
+  "final_l2": 0.00745552381594542,
+  "max_l2": 0.1599145916183368,
+  "final_linf": 0.0028281517097161757,
+  "final_conservation_error_cn": 3.063754884821677e-11,
+  "final_conservation_error_pinn": 0.0005806409016948029,
+  "max_conservation_error_pinn": 0.014275850831608764,
+  "final_reference_mass_error": 0.0005806408710572541,
+  "min_c_pinn": -0.0009792745113372803,
+  "first_negative_time_threshold": null,
+  "max_tv_ratio_pinn_to_initial": 1.0
+}

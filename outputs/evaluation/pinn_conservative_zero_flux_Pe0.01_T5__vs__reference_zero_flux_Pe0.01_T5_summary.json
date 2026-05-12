@@ -1,0 +1,16 @@
+{
+  "model": "outputs/models/pinn_conservative_zero_flux_Pe0.01_T5.pt",
+  "reference": "outputs/reference/reference_zero_flux_Pe0.01_T5.npz",
+  "bc_type": "zero_flux",
+  "M0": 0.2506626837728398,
+  "final_l2": 0.003772435540824898,
+  "max_l2": 0.009895891051060021,
+  "final_linf": 0.002808611878917344,
+  "final_conservation_error_cn": 2.6293658419695668e-12,
+  "final_conservation_error_pinn": 0.0007515300022323217,
+  "max_conservation_error_pinn": 0.0012951714919781747,
+  "final_reference_mass_error": 0.0007515300048616875,
+  "min_c_pinn": -8.6270272731781e-05,
+  "first_negative_time_threshold": null,
+  "max_tv_ratio_pinn_to_initial": 1.0
+}

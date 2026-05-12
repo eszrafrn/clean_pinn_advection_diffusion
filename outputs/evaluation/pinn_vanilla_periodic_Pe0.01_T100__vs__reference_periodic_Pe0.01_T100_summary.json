@@ -1,0 +1,16 @@
+{
+  "model": "outputs/models/pinn_vanilla_periodic_Pe0.01_T100.pt",
+  "reference": "outputs/reference/reference_periodic_Pe0.01_T100.npz",
+  "bc_type": "periodic",
+  "M0": 0.2506626837262588,
+  "final_l2": 0.2807402299666931,
+  "max_l2": 0.2807402299666931,
+  "final_linf": 0.0755910568521212,
+  "final_conservation_error_cn": 1.0977762949008128e-10,
+  "final_conservation_error_pinn": 0.2803082871052149,
+  "max_conservation_error_pinn": 0.2803082871052149,
+  "final_reference_mass_error": 0.2803082872149925,
+  "min_c_pinn": -0.0007567107677459717,
+  "first_negative_time_threshold": null,
+  "max_tv_ratio_pinn_to_initial": 1.0
+}
